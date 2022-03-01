@@ -17,4 +17,4 @@ jobs:
          url: "http://192.168.2.130:8080/jenkins"
          user: "Bharath"
          token: ${{ secrets.TOKEN }}
-         job: "foobar"
+         job: "Bharath"
