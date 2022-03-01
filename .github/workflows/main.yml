@@ -11,12 +11,10 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - name: Trigger jenkins job
-        uses: jabbukka/jenkins-trigger@main
+      - name: trigger single Job
+        uses: appleboy/jenkins-action@master
         with:
-         url: ${{ secrets.JENKINS_URL }}
-         job_name: "Bharath"
-         user_name: ${{ secrets.JENKINS_USER }}
-         api_token: ${{ secrets.JENKINS_TOKEN }}
-         wait: "true"
-         timeout: "1000"
+         url: "http://192.168.2.130:8080/jenkins"
+         user: "Bharath"
+         token: ${{ secrets.TOKEN }}
+         job: "foobar"
