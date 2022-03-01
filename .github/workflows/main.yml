@@ -1,4 +1,4 @@
-name: Trigger_Job
+name: Job_Trigger
 
 on:
   
