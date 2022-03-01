@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Trigger jenkins job
+        uses: jabbukka/jenkins-trigger@main
+        with:
+         url: ${{ secrets.JENKINS_URL }}
+         job_name: "Bharath"
+         user_name: ${{ secrets.JENKINS_USER }}
+         api_token: ${{ secrets.JENKINS_TOKEN }}
+         wait: "true"
+         timeout: "1000"
