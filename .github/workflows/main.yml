@@ -11,12 +11,20 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - name: Trigger jenkins job
-        uses: jabbukka/jenkins-trigger@main
+      - name: "Trigger jenkins job"
+        uses: GoldenspearLLC/build-jenkins-job@master
         with:
-         url: ${{ secrets.JENKINS_URL }}
-         job_name: "Bharath"
-         user_name: ${{ secrets.JENKINS_USER }}
-         api_token: ${{ secrets.JENKINS_TOKEN }}
-         wait: "true"
-         timeout: "1000"
+         jenkins-url: ${{ secrets.JENKINS_URL }}
+         jenkins-token: ${{ secrets.JENKINS_TOKEN }}
+         user: "jenkins"
+         job-path: "/root/.jenkins/jobs/Bharath"
+         
+ #     - name: Trigger jenkins job
+ #       uses: jabbukka/jenkins-trigger@main
+ #       with:
+ #        url: ${{ secrets.JENKINS_URL }}
+ #        job_name: "Bharath"
+ #        user_name: ${{ secrets.JENKINS_USER }}
+ #        api_token: ${{ secrets.JENKINS_TOKEN }}
+ #        wait: "true"
+ #        timeout: "1000"
