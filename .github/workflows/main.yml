@@ -17,7 +17,8 @@ jobs:
          jenkins-url: ${{ secrets.JENKINS_URL }}
          jenkins-token: ${{ secrets.JENKINS_TOKEN }}
          user: "jenkins"
-         job-path: "/root/.jenkins/jobs/Bharath"
+         job_name: "Bharath"
+  #       job-path: "/root/.jenkins/jobs/Bharath"
          
  #     - name: Trigger jenkins job
  #       uses: jabbukka/jenkins-trigger@main
